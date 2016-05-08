@@ -8,8 +8,9 @@ class SearchBar extends Component {
 //initialize state by creating a new object
 //term is where the change is recorded
     this.state = {term: ''};
-    //inside constructor is the ONLY time you initalize state
+    //inside constructor is the ONLY time you manually change state
     //setState should be used EVERYWHERE else
+    //initial value is empty 
   }
 
   render() {
@@ -21,8 +22,11 @@ class SearchBar extends Component {
     return (
     //whenever value changes, this runs and new value of input is rendered into state
       <div>
-        <input onChange={event => this.setState({term: event.target.value})} />
+        <input
+          value={this.state.term}
+          onChange={event => this.setState({term: event.target.value})} />
       </div>
+      //controlled component only has value changed by state
     );
   }
 }
