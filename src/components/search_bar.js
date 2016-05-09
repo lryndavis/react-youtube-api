@@ -10,7 +10,7 @@ class SearchBar extends Component {
     this.state = {term: ''};
     //inside constructor is the ONLY time you manually change state
     //setState should be used EVERYWHERE else
-    //initial value is empty 
+    //initial value is empty
   }
 
   render() {
@@ -21,7 +21,7 @@ class SearchBar extends Component {
     //pass event handler to element to be watched for event
     return (
     //whenever value changes, this runs and new value of input is rendered into state
-      <div>
+      <div className="search-bar">
         <input
           value={this.state.term}
           onChange={event => this.setState({term: event.target.value})} />
